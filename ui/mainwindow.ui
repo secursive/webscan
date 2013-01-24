@@ -25,6 +25,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btnView">
+        <property name="text">
+         <string>View</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btnScan">
         <property name="text">
          <string>Scan</string>
@@ -33,7 +40,7 @@
       </item>
      </layout>
     </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
      <widget class="QWebView" name="webView">
       <property name="url">
        <url>
@@ -42,12 +49,15 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="3" column="0">
      <widget class="QProgressBar" name="progressBar">
       <property name="value">
        <number>0</number>
       </property>
      </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPlainTextEdit" name="txtScanOutput"/>
     </item>
    </layout>
   </widget>

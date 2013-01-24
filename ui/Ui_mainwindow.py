@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'D:\Secursive\Github\workspace\webscan\ui\mainwindow.ui'
 #
-# Created: Wed Jan 16 21:57:19 2013
+# Created: Thu Jan 24 16:14:57 2013
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -36,6 +36,9 @@ class Ui_MainWindow(object):
         self.txtUrl = QtGui.QLineEdit(self.centralWidget)
         self.txtUrl.setObjectName(_fromUtf8("txtUrl"))
         self.horizontalLayout.addWidget(self.txtUrl)
+        self.btnView = QtGui.QPushButton(self.centralWidget)
+        self.btnView.setObjectName(_fromUtf8("btnView"))
+        self.horizontalLayout.addWidget(self.btnView)
         self.btnScan = QtGui.QPushButton(self.centralWidget)
         self.btnScan.setObjectName(_fromUtf8("btnScan"))
         self.horizontalLayout.addWidget(self.btnScan)
@@ -43,11 +46,14 @@ class Ui_MainWindow(object):
         self.webView = QtWebKit.QWebView(self.centralWidget)
         self.webView.setUrl(QtCore.QUrl(_fromUtf8("about:blank")))
         self.webView.setObjectName(_fromUtf8("webView"))
-        self.gridLayout.addWidget(self.webView, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.webView, 2, 0, 1, 1)
         self.progressBar = QtGui.QProgressBar(self.centralWidget)
         self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName(_fromUtf8("progressBar"))
-        self.gridLayout.addWidget(self.progressBar, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.progressBar, 3, 0, 1, 1)
+        self.txtScanOutput = QtGui.QPlainTextEdit(self.centralWidget)
+        self.txtScanOutput.setObjectName(_fromUtf8("txtScanOutput"))
+        self.gridLayout.addWidget(self.txtScanOutput, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)
@@ -56,6 +62,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "WebScan (Secursive)", None))
         self.txtUrl.setText(_translate("MainWindow", "http://", None))
+        self.btnView.setText(_translate("MainWindow", "View", None))
         self.btnScan.setText(_translate("MainWindow", "Scan", None))
 
 from PyQt4 import QtWebKit

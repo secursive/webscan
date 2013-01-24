@@ -9,7 +9,9 @@ from PyQt4.QtCore import pyqtSignature
 
 from Ui_mainwindow import Ui_MainWindow
 
-from PyQt4.QtCore import QUrl
+from PyQt4.QtCore import QUrl,  QThread
+from PyQt4.QtGui import QTextCursor
+import datetime
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
@@ -21,13 +23,38 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
+        self.txtScanOutput.setReadOnly(True);
+        self.txtScanOutput.setVisible(False);
+        self.webView.setVisible(True);
         self.progressBar.setVisible(False);
+        # Testing input url
+        self.txtUrl.setText("http://www.google.com")
     
     @pyqtSignature("")
     def on_btnScan_released(self):
         """
         Public slot invoked when the user clicks the Scan Button.
         """
+        #clearing previous text
+        textCursor = self.txtScanOutput.textCursor();
+        textCursor.movePosition(0);
+        textCursor.select(QTextCursor.Document);
+        textCursor.removeSelectedText();
+        #clearing unneeded views and making needed views visible
+        self.webView.setVisible(False);
+        self.progressBar.setVisible(False);
+        self.txtScanOutput.setVisible(True);
+        #performing scan and displaying results
+        textCursor.insertText(">> Starting Scan (" + str(datetime.datetime.now()) + ")\n");
+        textCursor.insertText(">> Finished Scan (" + str(datetime.datetime.now()) + ")\n");
+    
+    @pyqtSignature("")
+    def on_btnView_released(self):
+        """
+        Public slot invoked when the user clicks the Scan Button.
+        """
+        self.txtScanOutput.setVisible(False);
+        self.webView.setVisible(True);
         self.webView.load(QUrl(self.txtUrl.text()))
     
     @pyqtSignature("")
