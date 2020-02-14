@@ -1,5 +1,8 @@
 webscan
 =======
+
+**This project is not in abandoned for the moment and not maintained.**
+
 The Website Scanning tool.
 
 Web: http://apps.secursive.com/web-scan-app
