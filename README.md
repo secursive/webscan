@@ -1,7 +1,7 @@
 webscan
 =======
 
-**This project is not in abandoned for the moment and not maintained.**
+**This project is abandoned for the moment and not maintained.**
 
 The Website Scanning tool.
 
